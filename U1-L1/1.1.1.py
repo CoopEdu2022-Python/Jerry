@@ -9,7 +9,7 @@ print(phonenumber)
 username = "小A"
 print(username)
 # 1.1.4. 创建 1 个初始值为零的变量，用于保存用户的账户余额，将初始余额打印到控制台
-boc = 0
+boc = 0.0
 print(boc)
 #boc是balance of account的缩写
 
