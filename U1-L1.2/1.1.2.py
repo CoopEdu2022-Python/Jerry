@@ -21,7 +21,7 @@ anwser2_2 *= anwser2_3
 anwser2_2 -= 100
 print(anwser2_2, anwser2_3)
 
-print(("*"+"分割线"+"*")*10)
+print(("**"+"分割线"+"**")*10)
 # 3. 小明想购买 1 台顶配的 iPhone 13 Pro Max，起售价为 12999 元，某店铺按 9.5 折出售，且提供每单 200 元的优惠券，小明实际需要支付的金额是？
 iPhone_13 = 12999
 now_iphone = (iPhone_13 * 0.95)-200
