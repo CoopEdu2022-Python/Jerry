@@ -7,6 +7,7 @@ anwser1_3 = 80/10
 anwser1_4 = 2 * 4
 anwser1_5 = 9 - 1
 print(anwser1_2, anwser1_3, anwser1_4, anwser1_5)
+print(("**"+"分割线"+"**")*10)
 # 2. 定义 2 个变量，使用任意 5 个不同的赋值运算符，打印 2 个变量的计算结果
 
 anwser2_1 = 5
@@ -26,14 +27,17 @@ print(("**"+"分割线"+"**")*10)
 iPhone_13 = 12999
 now_iphone = (iPhone_13 * 0.95)-200
 print(now_iphone )
+print(("**"+"分割线"+"**")*10)
 # 4. 小明有存款 56789 元，全部用于购买 #3 的 iPhone 13 Pro Max，最多能买多少台？
 allmoney_1 = 56789
 number_phone = allmoney_1 // now_iphone
 print(number_phone)
+print(("**"+"分割线"+"**")*10)
 # 5. 小红有存款 67890 元，全部用于购买 #3 的 iPhone 13 Pro Max，还能剩多少钱？
 allmoney_2 = 67890
 money_now = allmoney_2 % now_iphone
 print(money_now)
+print(("**"+"分割线"+"**")*10)
 # 6. 小红把上述剩余的钱购买数字货币，每个月的收益为 +100%（每月翻一倍），一年后她有多少钱？
 
 rich = money_now * (2 ** 12)
