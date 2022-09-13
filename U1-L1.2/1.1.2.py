@@ -33,18 +33,18 @@ print(("**"+"分割线"+"**")*10)
 print("4. 小明有存款 56789 元，全部用于购买 #3 的 iPhone 13 Pro Max，最多能买多少台？")
 allmoney_1 = 56789
 number_phone = allmoney_1 // now_iphone
-print(int(number_phone))
+print("最多能买",int(number_phone),"台",end="\n"*2)
 print(("**"+"分割线"+"**")*10)
 # 5. 小红有存款 67890 元，全部用于购买 #3 的 iPhone 13 Pro Max，还能剩多少钱？
 print("5. 小红有存款 67890 元，全部用于购买 #3 的 iPhone 13 Pro Max，还能剩多少钱？")
 allmoney_2 = 67890
 money_now = allmoney_2 % now_iphone
-print("%.2f" % money_now)
+print("小红有存款 67890 元，全部用于购买 #3 的 iPhone 13 Pro Max，还能剩","%.2f" % money_now,"元",end="\n"*2 )
 print(("**"+"分割线"+"**")*10)
 # 6. 小红把上述剩余的钱购买数字货币，每个月的收益为 +100%（每月翻一倍），一年后她有多少钱？
 print("6. 小红把上述剩余的钱购买数字货币，每个月的收益为 +100%（每月翻一倍），一年后她有多少钱？")
 rich = money_now * (2 ** 12)
-print("%.2f" % rich)
+print("小红把上述剩余的钱购买数字货币，每个月的收益为 +100%（每月翻一倍），一年后她有" , "%.2f" % rich , "元",end="\n"*2)
 # 7. 小红心里默念 50 次 “太棒了”。在控制台打印她的心理活动
 print("7. 小红心里默念 50 次 “太棒了”。在控制台打印她的心理活动")
 print("太棒了 " * 50)
