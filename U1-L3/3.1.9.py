@@ -1,11 +1,13 @@
 # 3.1.9 质数判断：用户输入一个正整数，用程序判断是否为质数
-start_number = 2
-x_r = int(input(""))
-while start_number % x_r == 0:
+a = int(input(("输入一个数字\n")))
+for i in (2 , a , 1):
+    if a % i == 0:
+        if i == a:
+            print("质数")
+            break
+        elif i != a:
+            print("合数")
+            break
 
-    if x_r == start_number:
-        print("质数")
-        break
-
-    start_number = start_number + 1
-    print(start_number)
+    else:
+        i = i+1
