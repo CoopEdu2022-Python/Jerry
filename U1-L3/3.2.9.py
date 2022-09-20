@@ -8,3 +8,7 @@ while start_number % x_r == 0:
         break
 
     start_number = start_number + 1
+    print(start_number)
+
+a = int(input(("输入一个数字\n")))
+for i in (1 , a , 1):
