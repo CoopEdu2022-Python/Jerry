@@ -1,5 +1,7 @@
-# 3.1.11 制作一个动态的进度条（提示：使用 print 函数的 end 参数）
-i=1
-while i < 30:
-    print("|",end="")
-    i=i+1
+import time
+for a in range(1,101):
+    print("\b"*5,end="")
+    print(a,"%",end="",sep="")
+    time.sleep(0.1*a)
+    a += 1
+
