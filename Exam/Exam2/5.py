@@ -8,7 +8,7 @@ for a in range(3,1000):
             elif i != a:
                 while a % i == 0:
                     c = i + c
-                    if c + 1 == a:
+                    if c == a:
                         print(c)
                     a = a / i
                     continue
