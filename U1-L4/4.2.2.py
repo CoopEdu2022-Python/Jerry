@@ -1,3 +1,1 @@
-# 4.2.1 喜欢的图书 ：编写一个名为 favorite_book() 的函数，其中包含一个名为 title 的形参
-# 这个函数打印一条消息，如 "One of my favorite books is 《Alice in Wonderland》"
-# 调用这个函数，并将一本图书的名称作为实参传递给它（并不一定是 Alice in Wonderland）
+# 4.2.2 编写一个名为 make_shirt() 的函数，用户输入尺码以及要印到短袖上的文字。这个函数应打印一个句子，告知用户短袖的尺码和文字，便于用户确认
