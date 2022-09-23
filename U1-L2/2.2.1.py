@@ -11,7 +11,7 @@ else:
 next_2 = str(input("你有杯子吗？"))
 next_1 = float(input("水杯中的液体有多少毫升"))
 
-if (next_1>200 or next_2 =="有" and "是"):
+if (next_1>200 or next_2 =="有" or next_2 == "是"):
     next_3 = str(input("会不会爆炸"))
     if next_3 == "不会":
         print("再检查检查")

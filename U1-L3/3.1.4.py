@@ -6,7 +6,7 @@
 import random
 r = random.randint(1,100)
 i = 0
-while 5 >+ i:
+while 5 > i:
     answer = int(input("在100到1之间猜数字，还剩余" "%d" "次机会哦\n" %(5-i)))
     if answer == r:
         print("恭喜你答对啦！")
