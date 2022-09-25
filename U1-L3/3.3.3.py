@@ -7,7 +7,7 @@
 '''
 for a in range(1,10,1):
     print("\n")
-    for b in  range(1,10,1):
+    for b in  range(1,a+1,1):
         if b == 10:
             break
         else:
