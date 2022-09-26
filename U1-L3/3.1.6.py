@@ -12,3 +12,4 @@ while x != 31 :
     x = x + 1
     print(grade_sum)
 print("录入完毕！平均分为%f.2分" % (grade_sum / 30))
+
