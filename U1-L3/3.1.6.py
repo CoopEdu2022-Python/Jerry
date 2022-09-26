@@ -4,12 +4,16 @@
 x = 0
 grade_sum = 0
 
-while x != 31 :
-    grade = 0
-    while grade <= 0 or grade > 100:
+while x != 30 :
+    grade = 1
+    while 1:
         grade = int(input("输入分数"))
-    grade_sum = grade + grade_sum
-    x = x + 1
+        if grade < 100 and grade > 0 :
+            grade_sum = grade + grade_sum
+            x = x + 1
+            break
+        else:
+            print("不可以")
     print(grade_sum)
-print("录入完毕！平均分为%f.2分" % (grade_sum / 30))
+print("录入完毕！平均分为%f分" % (grade_sum / 30))
 
