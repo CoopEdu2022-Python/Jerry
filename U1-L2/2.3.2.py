@@ -1,3 +1,9 @@
 import random
-for i in range(0,6):
-    print(random.randint(1, 36))
+a = []
+for i in range(0,80):
+    x = random.randint(1, 800)
+    if x in a:
+        continue
+    a.append(x)
+print(a)
+
