@@ -1,11 +1,11 @@
-plant_place = [[1,2,3],[4,5,6],[7,8,9]]
+plant_place = [[" "," "," "],[" "," "," "],[" "," "," "]]
 def showing_systema(a):
     safe_list = []
     while 1:
         if 1 in a == True:
-            plant_place[1][1]=  "o"
+            plant_place[0][0]=  "o"
         elif 2 in a == True:
-            plant_place[1][2] = "o"
+            plant_place[0][1] = "o"
         elif 3 in a == True:
             plant_place[1][3] = "o"
         elif 4 in a == True:
@@ -26,9 +26,9 @@ def showing_systemb(b):
     safe_list = []
     while 1:
         if 1 in b == True:
-            plant_place[1][1]=  "x"
+            plant_place[0][0]=  "x"
         elif 2 in b == True:
-            plant_place[1][2] = "x"
+            plant_place[0][1] = "x"
         elif 3 in b == True:
             plant_place[1][3] = "x"
         elif 4 in b == True:
@@ -44,13 +44,17 @@ def showing_systemb(b):
         elif 9 in b == True:
             plant_place[3][3] = "x"
             return b
-# while 1:
-#     x = int(input("输入位置1-9"))
-#     showing_systema(x)
-#     print(plant_place)
-#     showing_systemb(x)
-#     print(plant_place)
-plant_place[0][1] = "x"
-print(plant_place)
+def composition():
+    for i in range(0,3):
+        for cunt in range(0,3):
+            print(plant_place[i][cunt],end="   ")
+        print("\n")
+while 1:
+    x = int(input("输入位置1-9"))
+    showing_systema(x)
+    print(plant_place)
+    showing_systemb(x)
+    print(plant_place)
+composition()
 
 
