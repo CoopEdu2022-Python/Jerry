@@ -1,4 +1,4 @@
-plant_place = [[1,2,3],"\n"[4,5,6],"\n"[7,8,9]]
+plant_place = [[1,2,3],[4,5,6],[7,8,9]]
 def showing_systema(a):
     safe_list = []
     while 1:
@@ -50,7 +50,7 @@ def showing_systemb(b):
 #     print(plant_place)
 #     showing_systemb(x)
 #     print(plant_place)
-plant_place[1][3] = "x"
+plant_place[0][1] = "x"
 print(plant_place)
 
 
