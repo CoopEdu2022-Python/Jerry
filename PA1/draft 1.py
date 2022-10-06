@@ -1,5 +1,5 @@
-plant_place = [[[],[],[]],[],[]]
-def showing_system(a):
+plant_place = [[1,2,3],"\n"[4,5,6],"\n"[7,8,9]]
+def showing_systema(a):
     safe_list = []
     while 1:
         if 1 in a == True:
@@ -22,7 +22,7 @@ def showing_system(a):
             plant_place[3][3] = "o"
             return a
 
-def showing_system(b):
+def showing_systemb(b):
     safe_list = []
     while 1:
         if 1 in b == True:
@@ -44,6 +44,13 @@ def showing_system(b):
         elif 9 in b == True:
             plant_place[3][3] = "x"
             return b
-while 1:
-    x = input(int("输入位置1-9"))
+# while 1:
+#     x = int(input("输入位置1-9"))
+#     showing_systema(x)
+#     print(plant_place)
+#     showing_systemb(x)
+#     print(plant_place)
+plant_place[1][3] = "x"
+print(plant_place)
+
 
