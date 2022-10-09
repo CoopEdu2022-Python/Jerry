@@ -67,9 +67,9 @@ def composition():
         for cunt in range(0,3):
             print(plant_place[i][cunt],end="   ")
         print("\n")
-def judge():
 
-while 1:
+
+while 1 :
     for _ in range(0,2):
         if _ == 0:
             x = int(input("输入位置1-9"))
