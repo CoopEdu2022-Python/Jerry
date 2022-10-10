@@ -13,4 +13,3 @@ def compare_dict(dict1, dict2):
 compare_dict(list_a,list_b)
 all_tuple = (list_d)
 print(all_tuple)
-#不知道dict1.get咋用
