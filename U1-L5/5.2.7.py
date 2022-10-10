@@ -6,15 +6,15 @@ passwords = ('123', 'abc', '@*#')
 # 如果失败，说明具体的错误原因，让用户重新登陆，共有 3 次机会
 for i in range(0,3):
     username = input("请输入用户名")
-    for j in range(0,len(users)):
-        if username == users[j]:
-            for x in range(0,len(passwords)):
-                key = input("请输入密码")
-                if key == passwords[x]:
-                    print("欢迎")
-                else:
-                    print("密码错误")
-                    continue
-        else:
-            print("无该用户名")
-            break
+    if username not in users:
+        print("无该用户名")
+
+    if username == users[j]:
+        for x in range(0,len(passwords)):
+            key = input("请输入密码")
+            if key == passwords[x]:
+                print("欢迎")
+                break
+            else:
+                print("密码错误")
+                continue
