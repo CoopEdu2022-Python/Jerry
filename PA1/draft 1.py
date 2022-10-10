@@ -1,6 +1,7 @@
 plant_place = [["口","口","口"],["口","口","口"],["口","口","口"]]
 a = []
 b = []
+import os
 def showing_systema(x):
     while 1:
         if 1 == x:
@@ -74,10 +75,12 @@ while 1 :
         if _ == 0:
             x = int(input("输入位置1-9"))
             showing_systema(x)
+            os.system("clear")
             composition()
         else:
             x = int(input("输入位置1-9"))
             showing_systemb(x)
+            os.system("clear")
             composition()
 
 
