@@ -9,12 +9,15 @@ for i in range(0,3):
     if username not in users:
         print("无该用户名")
 
-    if username == users[j]:
+    if username in users:
         for x in range(0,len(passwords)):
             key = input("请输入密码")
-            if key == passwords[x]:
+            if key == passwords[users.index(username)]:
                 print("欢迎")
                 break
             else:
                 print("密码错误")
                 continue
+        break
+    break
+

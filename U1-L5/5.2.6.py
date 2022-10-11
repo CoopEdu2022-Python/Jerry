@@ -3,14 +3,15 @@
 def cut_number(list):
 
     while 1:
+        if len(list) <= 1:
+            return list
         int_1 = 0
-        for i in range (0,2):
-            list.sort()
-            if len(list) == 1:
-                return list
-            else:
-                int_1 += list[0]
-                list.pop(0)
+        list.sort()
+        int_1 = list[0] * list[1]+1
         list.append(int_1)
+        list.sort()
+        list.pop(0)
+        list.pop(0)
 
-print(cut_number([2,3,4,2,4,23,4,3]))
+a = [1,7,9,6,3]
+print(cut_number(a))
