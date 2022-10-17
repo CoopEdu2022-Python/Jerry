@@ -15,4 +15,5 @@ def fanzhuan(n,t="123456789"):
     print(result)
 fanzhuan(3)
 #会有一个问题就是在n = 2 时会超出引索但是不知道12行怎么改
+#切片
 
