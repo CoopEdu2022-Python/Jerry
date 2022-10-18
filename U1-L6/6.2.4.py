@@ -18,6 +18,7 @@ def alt(s):
     s=s.replace('M','1000 ')
     end = s.split()
 
+
     for _ in range(len(end)):
         s = int(end[_])
         list.append(s)
