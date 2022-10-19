@@ -11,17 +11,13 @@ def columnNumber(num):
     return result
 def altcolumnnimber(num):
     list_al = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    carry = 0
-    sum_ = 0
     safe_list = []
-    while num > 0:
-        safe_list.append(list_al[num - 1 % 26])
-        num = (num-1)//26
-    safe_list.append(list_al[carry])
-    safe_list.append(list_al[num])
 
-    return "".join(str(list_al))
-print(altcolumnnimber(28))
+    while num > 0:
+        safe_list.append(list_al[(num - 1) % 26])
+        num = (num-1)//26
+    return "".join(safe_list[::-1])
+print(altcolumnnimber(2147483647))
 
 
 #好像写反了
