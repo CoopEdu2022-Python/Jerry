@@ -19,5 +19,4 @@ def altcolumnnimber(num):
     return "".join(safe_list[::-1])
 print(altcolumnnimber(2147483647))
 
-
 #好像写反了
