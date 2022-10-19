@@ -9,6 +9,19 @@ def columnNumber(num):
         carry = list_al.find(num[_])+1 + carry
         print(list_al.find(num[_])+1)
     return result
-print(columnNumber("ZY"))
+def altcolumnnimber(num):
+    list_al = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    carry = 0
+    sum_ = 0
+    safe_list = []
+    while num > 0:
+        safe_list.append(list_al[num - 1 % 26])
+        num = (num-1)//26
+    safe_list.append(list_al[carry])
+    safe_list.append(list_al[num])
+
+    return "".join(str(list_al))
+print(altcolumnnimber(28))
+
 
 #好像写反了
