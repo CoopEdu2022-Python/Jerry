@@ -10,7 +10,7 @@ def checkerboard_print(list_number):
             print("\n", "——--——--——--——-", sep="")
 def judge_checkerboard(list_number):
     for _ in range(0, 7):
-        location = int(input("下载哪里"))
+        location = int(input("下在哪里"))
         if location == list_number[location+1]:
             if _ // 2 == 1:
                 list_number[location + 1] = "x"
