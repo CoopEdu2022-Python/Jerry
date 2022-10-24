@@ -1,8 +1,6 @@
 def reset_key():
 
     login_info = {'root':'123', 'user1':"abc", 'user2':"@*#"}
-    users = ('root', 'user1', 'user2')
-    passwords = ('123', 'abc', '@*#')
     while 1:
         username = input("请输入用户名")
         if username == "q":
