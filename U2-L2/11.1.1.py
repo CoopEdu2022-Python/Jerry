@@ -9,7 +9,7 @@ class Student:
 
     def add_courses(self):
         while 1:
-            class_choose = input()
+            class_choose = input("请输入课程")
             self.courses.append(class_choose)
             judge = input("还有课程吗？(Y/N)")
             if judge == "Y":
@@ -23,6 +23,7 @@ class Student:
     def __len__(self):
         return len(self.courses)
 student1 = Student()
+student1.add_courses()
 print(student1.name)
 print(student1.courses)
 print(len(student1.courses))
