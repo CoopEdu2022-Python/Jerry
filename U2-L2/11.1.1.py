@@ -11,11 +11,14 @@ class Student:
         while 1:
             class_choose = input("请输入课程")
             self.courses.append(class_choose)
-            judge = input("还有课程吗？(Y/N)")
-            if judge == "Y":
-                continue
-            elif judge == "N":
-                return self.courses
+            while 1:
+                judge = input("还有课程吗？(Y/N)")
+                if judge == "Y":
+                    break
+                elif judge == "N":
+                    return self.courses
+                else:
+                    continue
 
 
     def get_course(self):
