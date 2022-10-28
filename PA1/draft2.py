@@ -43,6 +43,7 @@ def win(list_number):
         return True
     else:
         return False
+def after_7times_chessing():
 
 while 1:
     checkerboard_print(judge_checkerboard(list_number))
