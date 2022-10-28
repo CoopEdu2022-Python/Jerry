@@ -35,7 +35,8 @@ def judge_checkerboard(list_number):
             print(str("%s子赢了" % (list_number[int(location) - 1])))
             return list_number
 
-        else:continue
+        else:
+            continue
     return list_number
 
 def win(list_number):
@@ -44,6 +45,7 @@ def win(list_number):
     else:
         return False
 def after_7times_chessing():
+
 
 while 1:
     checkerboard_print(judge_checkerboard(list_number))
