@@ -1,50 +1,81 @@
-list_number = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 import os
-def checkerboard_print(list_number):
-    if win(list_number) == False:
+
+list_number = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# 将列表打印为图像
+def checkerboard_print(safe_list):
+    safe_list = list(safe_list)
+    if win(safe_list) == False:
         os.system("cls")
         for _ in range(0, 3):
 
             for i in range(0, 3):
-                print("| ", " ", end="|", sep="%s" % str(list_number[int(3 * _ + i)]))
+                print("| ", " ", end="|", sep="%s" % str(safe_list[int(3 * _ + i)]))
             if _ == 2:
                 break
             else:
                 print("\n", "——--——--——--——-", sep="")
     else:
-        return "已经结束了"
-#好像是判断啊
-def judge_checkerboard(list_number):
+        os.system("cls")
+        for _ in range(0, 3):
+
+            for i in range(0, 3):
+                print("| ", " ", end="|", sep="%s" % str(safe_list[int(3 * _ + i)]))
+            if _ == 2:
+                break
+            else:
+                print("\n", "——--——--——--——-", sep="")
+        return "结束了"
+
+
+# 输入输出棋子数量——操作
+def judge_checkerboard(safe_list):
+    save_listBefore = []
     for _ in range(0, 7):
         while 1:
-            location = input("下在哪里")
-            if str(location).isalpha() == True:
+            location = input("下在哪里'输入数字1~9'")
+            if str(location).isalpha():
                 print("不可以输入字母")
                 continue
             elif str(location) == "":
                 print("请勿输入空")
+                continue
+            elif not str(location).isalnum():
+                print("!!!输入数字1~9!!!")
+                continue
+            elif safe_list[int(location) - 1] == "o" or safe_list[int(location) - 1] == "x":
+                print("该位置已经有一个棋子了")
+                continue
             else:
                 break
-        if str(location) == str(list_number[int(location) - 1]):
+        if str(location) == str(safe_list[int(location) - 1]):
             if _ % 2 == 1:
-                list_number[int(location) - 1] = "x"
+                safe_list[int(location) - 1] = "x"
             else:
-                list_number[int(location) - 1] = "o"
-        checkerboard_print(list_number)
-        if win(list_number) == True:
-            print(str("%s子赢了" % (list_number[int(location) - 1])))
-            return list_number
-
+                safe_list[int(location) - 1] = "o"
+        checkerboard_print(safe_list)
+        if win(safe_list):
+            print(str("%s子赢了" % (safe_list[int(location) - 1])))
+            return "游戏结束了"
         else:
             continue
-    return list_number
+    if win(safe_list):
+        return
 
-def win(list_number):
-    if list_number[0] == list_number[1] == list_number[2] or list_number[2] == list_number[5] == list_number[8] or list_number[6] == list_number[7] == list_number[8] or list_number[0] == list_number[3] == list_number[6] or list_number[6] == list_number[4] == list_number[2] or list_number[8] == list_number[4] ==list_number[0] or list_number[3] == list_number[4] == list_number[5] or list_number[7] == list_number[4] == list_number[1]:
+# 判断输赢
+def win(safe_list):
+    safe_list = list(safe_list)
+    if safe_list[0] == safe_list[1] == safe_list[2] or safe_list[2] == safe_list[5] == safe_list[8] or \
+            safe_list[6] == safe_list[7] == safe_list[8] or safe_list[0] == safe_list[3] == safe_list[6] or \
+            safe_list[6] == safe_list[4] == safe_list[2] or safe_list[8] == safe_list[4] == safe_list[0] or \
+            safe_list[3] == safe_list[4] == safe_list[5] or safe_list[7] == safe_list[4] == safe_list[1]:
         return True
     else:
         return False
-def after_7times_chessing():
+
+
+def after_7times_gaming(safe_list, save_listBefore):
+    print(safe_list)
 
 
 while 1:
