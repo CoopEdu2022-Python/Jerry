@@ -74,9 +74,9 @@ def win(safe_list):
         return False
 
 
-def after_7times_gaming(safe_list, save_listBefore):
-    print(safe_list)
+def after_7times_gaming(save_listBefore):
+    judge_checkerboard(list_number)
+    print(save_listBefore)
 
 
-while 1:
-    checkerboard_print(judge_checkerboard(list_number))
+judge_checkerboard(list_number)
