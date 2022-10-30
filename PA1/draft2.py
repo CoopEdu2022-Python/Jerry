@@ -47,9 +47,12 @@ def judge_checkerboard(safe_list):
             elif not str(location).isalnum():
                 print("!!!输入数字1~9!!!")
                 continue
+            elif 1>=int(location) or 9<=int(location):
+                print("超出范围!!!输入数字1~9!!!")
             elif safe_list[int(location) - 1] == "o" or safe_list[int(location) - 1] == "x":
                 print("该位置已经有一个棋子了")
                 continue
+
 
 
             else:
@@ -76,7 +79,8 @@ def judge_checkerboard(safe_list):
 # 判断输赢
 def win(safe_list):
     safe_list = list(safe_list)
-    if 1 in safe_list or 2 in safe_list or 3 in safe_list or 4 in safe_list:
+    if 1 in safe_list or 2 in safe_list or 3 in safe_list or 4 in safe_list or 5 in safe_list or\
+            6 in safe_list or 8 in safe_list or 9 in safe_list:
         if safe_list[0] == safe_list[1] == safe_list[2] or safe_list[2] == safe_list[5] == safe_list[8] or \
                 safe_list[6] == safe_list[7] == safe_list[8] or safe_list[0] == safe_list[3] == safe_list[6] or \
                 safe_list[6] == safe_list[4] == safe_list[2] or safe_list[8] == safe_list[4] == safe_list[0] or \
