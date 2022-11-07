@@ -9,8 +9,8 @@ class Player:
     def play_chess(self):
         pass
 
-playerA = Player
-playerB = Player
+playerA = Player()
+playerB = Player()
 
 
 

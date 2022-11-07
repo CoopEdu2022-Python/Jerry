@@ -21,5 +21,14 @@ def is_power_of_3_v2(n) -> bool:
         return is_power_of_3_v2(n/3)
     else:
         return False
+def is_power_of_3_v3(n):
+    safe_list = []
+
+    for _ in range(0,32):
+        x = 3 ** _
+        safe_list.append(x)
+    return n in safe_list
+
 print(is_power_of_3_v1(27))
 print(is_power_of_3_v2(9))
+print(is_power_of_3_v3(6))
