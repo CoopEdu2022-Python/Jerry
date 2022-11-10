@@ -7,11 +7,14 @@ class Exam:
         self.points = points
 
 class Test(Exam):
-    def __init__(self, id, start_time, points):
-        self.start_time = None
-
+    def __init__(self):
+        self.id = ""
+        self.points = 10
+class Ather(Exam):
+    def __init__(self):
+        super()
 B = Exam("123","321","1234","4321")
-A = Test("123","321","1234")
+A = Test()
 print('\n'.join(['{0}: {1}'.format(item[0], item[1]) for item in B.__dict__.items()]))
 
 print('\n'.join(['{0}: {1}'.format(item[0], item[1]) for item in A.__dict__.items()]))

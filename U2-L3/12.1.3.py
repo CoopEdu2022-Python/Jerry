@@ -22,4 +22,4 @@ class Fruit:
 apple = Fruit()
 apple._secret()
 # 有几个实例属性？几个实例方法？几个私有实例属性？几个私有实例方法？
-# 4 5 2 2
+# 4 4 2 2
