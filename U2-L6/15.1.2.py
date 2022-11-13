@@ -50,5 +50,3 @@ class Bigfish(FIsh):
             for number in range (Smallfish.numbers,0,-1):
                 self.Hp +=20
 
-
-for _ in range (10):
