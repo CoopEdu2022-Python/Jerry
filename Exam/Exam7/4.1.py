@@ -10,9 +10,16 @@ def gcd_pro_max_2(*n):
     return n[len(n)-1]
 
 def gcd_pro_max_1(*n):
+    n = list(n)
+    i = 0
+    n.sort(reverse=True)
     if n[1] == n[len(n)-1]:
         return n[1]
 
-print(gcd_pro_max_2(1, 2, 3, 4, 5))
-print(gcd_pro_max_2(2, 4, 6, 8, 10))
-print(gcd_pro_max_2(999, 1999, 2999, 3999, 4999))
+    if n[i] % n[i+1] == 0:
+        return n[i+1]
+    else:
+        return n[i] % n[i+1]
+
+print(gcd_pro_max_1(1, 2, 3, 4, 5))
+print(gcd_pro_max_1(2, 4, 6, 8, 10))
