@@ -29,7 +29,9 @@ class Smallfish(FIsh):
         print("小鱼在 (%d , %d)"% (self.x,self.y))
         return(self.x,self.y)
     def being_eat(self):
-        print("被吃了")
+        print("被吃了__________________")
+    def give_location(self):
+        return (self.x, self.y)
 
 class Bigfish(FIsh):
     def __init__(self):
@@ -42,31 +44,28 @@ class Bigfish(FIsh):
         else:
             self.y += random.randint(-1, 1)
             self.y = self.set_real(self.y)
-        self.Hp -= self.Hp
+        self.Hp -= 1
         print("大鱼在 (%d , %d)"% (self.x,self.y))
         print("大鱼Hp %d"% self.Hp)
         return (self.x,self.y)
     def eat(self):
         self.Hp += 20
 x = []
-a = 0
 bigfish = Bigfish()
-for _ in range(11):
+for _ in range(10):
     x.append(Smallfish())
-while x != [] or bigfish.Hp != 0:
-    bigfish.move()
-    a+=a
-    print("A%s"% a)
-    for a in range(10):
-       x[a].move()
+while x != [] and bigfish.Hp >= 1:
+    safe = bigfish.move()
+    for a in x:
+       a.move()
     i = 0
-    while i <= len(x):
-        if x[i].move() == bigfish.move():
+    while i <= len(x)-1:
+        if x[i].give_location() == safe:
             bigfish.eat()
             x[i].being_eat()
             x.pop(i)
-            print(i)
         else:
-            i += i
-            break
-print(x)
+
+            i += 1
+
+print("game over")
