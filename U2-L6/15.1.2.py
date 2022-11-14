@@ -36,14 +36,15 @@ class Bigfish(FIsh):
         super().__init__()
         self.Hp = 100
     def move(self):
+        primary = (self.x,self.y)
         if random.randint(0, 1):
             self.x += random.randint(-1, 1)
             self.x = self.set_real(self.x)
         else:
             self.y += random.randint(-1, 1)
             self.y = self.set_real(self.y)
-        self.Hp -= 1
-        print("大鱼在 (%d , %d)"% (self.x,self.y))
+        self.Hp -= (abs(primary[0]-self.set_real(self.x))+abs(primary[1]-self.set_real(self.y)))
+        print("大鱼在 (%d , %d)" % (self.x,self.y))
         print("大鱼Hp %d"% self.Hp)
         return (self.x,self.y)
     def eat(self):
