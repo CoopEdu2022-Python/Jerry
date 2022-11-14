@@ -28,10 +28,8 @@ class Smallfish(FIsh):
         super(Smallfish, self)
         print("小鱼在 (%d , %d)"% (self.x,self.y))
         return(self.x,self.y)
-    def __del__(self):
-        print("被吃了")
     def being_eat(self):
-        del self
+        print("被吃了")
 
 class Bigfish(FIsh):
     def __init__(self):
@@ -46,23 +44,28 @@ class Bigfish(FIsh):
             self.y = self.set_real(self.y)
         self.Hp -= self.Hp
         print("大鱼在 (%d , %d)"% (self.x,self.y))
+        print("大鱼Hp %d"% self.Hp)
         return (self.x,self.y)
     def eat(self):
         self.Hp += 20
 x = []
+a = 0
 bigfish = Bigfish()
 for _ in range(11):
     x.append(Smallfish())
 while x != [] or bigfish.Hp != 0:
     bigfish.move()
+    a+=a
+    print("A%s"% a)
     for a in range(10):
        x[a].move()
     i = 0
-    while i <= 10:
+    while i <= len(x):
         if x[i].move() == bigfish.move():
             bigfish.eat()
             x[i].being_eat()
             x.pop(i)
+            print(i)
         else:
             i += i
             break
