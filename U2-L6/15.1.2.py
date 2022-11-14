@@ -12,8 +12,6 @@ class FIsh:
             self.y += random.randint(-1, 1)
             self.y = self.set_real(self.y)
 
-
-
     def set_real(self, o):
         if o > 10:
             return 9
