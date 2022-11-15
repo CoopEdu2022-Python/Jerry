@@ -13,7 +13,7 @@ class Manager:
     def __inspect(self,person):
         return person.__performance
     def open_inspenct(self,person):
-        self.__inspect(self)
+        print(self.__inspect(self))
 class Keeper(Manager):
     def __init__(self):
         super()
