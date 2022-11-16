@@ -7,15 +7,13 @@ class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+    def __str__(self):
+        return str(self.x,self.y)
+
+class Segment():
+    def __init__(self,x, y, ex, ey):
 
 
-class Segment(Point):
-    def __init__(self,x, y, px, py):
-        self.x = x
-        self.y = y
-
-        self.__x = px
-        self.__y = py
 
     def get_len(self):
-        return math.sqrt(abs(self.__x.x - self.__y.x) ** 2 + abs(self.__y.x - self.__x.x) ** 2)
+        return math.sqrt(abs() ** 2 + abs() ** 2)
