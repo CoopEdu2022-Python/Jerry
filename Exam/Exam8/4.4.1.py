@@ -17,6 +17,7 @@ class Player():
         return random.choice([10,5,2])
 class Computer(Player):
     pass
+
 def game():
 
     if player.punch() == 10 and computer.punch() == 5:
