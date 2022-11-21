@@ -38,4 +38,4 @@ player = Player()
 computer = Computer()
 for _ in range(10):
     game()
-print(computer.points,player.points)
+print(computer.points, player.points)
