@@ -14,7 +14,7 @@ class Player():
     def __init__(self):
         self.points = 0
     def punch(self):
-        return random.choice(['10','5','2'])
+        return random.choice([10,5,2])
 class Computer(Player):
     pass
 def game():
