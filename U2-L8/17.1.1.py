@@ -30,5 +30,6 @@ class E():
         Fruit.type_number += 1
 a = A()
 b = B()
+
 f = Fruit
 print(f.variety())
