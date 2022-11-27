@@ -2,8 +2,7 @@
 """执行时检测到的错误称为异常
 """
 # 2. 异常有哪些类型？（如何找到全部的异常类型？)
-print([name for name in dir(BaseException) if name[:2]!="__"and name [::-1][:2] != "__"]) # 不知道存在Exception自带的异常在哪里
-
+print([name for name in dir(__builtins__) if name [::-1][:5] == "rorrE"]) # 不知道存在Exception自带的异常在哪里
 # 3. 如何捕获异常？
 """try:
     尝试执行的代码
