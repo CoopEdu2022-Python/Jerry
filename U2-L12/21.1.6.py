@@ -10,3 +10,4 @@ for _ in range(len(a)):
         file1.write(a[_].lower())
     else:
         file1.write(a[_])
+file.close()
