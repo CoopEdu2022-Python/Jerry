@@ -4,7 +4,8 @@ from user import User
 class Student(User):
     id = "uid_student"
 
-    def __init__(self, point: int):
+    def __init__(self, point: int, name: str, account_number: str, password: str):
+        super().__init__(name, account_number, password)
         self.point = point
         self.course = []
         self.jurisdiction = "student"
