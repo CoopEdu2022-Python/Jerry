@@ -23,3 +23,7 @@ class Student(User):
         # if 成功
         self.course.pop(course_name)
         return self.name, course_name
+
+    def add_student(self):
+        student_name = input("输入想要添加的姓名")
+        student_account = input("输入初始账号")
