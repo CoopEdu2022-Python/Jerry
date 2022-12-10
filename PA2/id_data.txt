@@ -1,0 +1,15 @@
+121212 123456 刘行 studentno class 2学分
+1238923 123456 sdans studentno class 2学分
+123 123456 sddns studentno class 2学分
+121212 123456 刘行 studentno class 2学分
+1238923 123456 sdans studentno class 2学分
+123 123456 sddns studentno class 2学分
+121212 123456 刘行 studentno class 2学分
+1238923 123456 sdans studentno class 2学分
+123 123456 sddns studentno class 2学分
+121212 123456 刘行 studentno class 2学分
+1238923 123456 sdans studentno class 2学分
+123 123456 sddns studentno class 2学分
+121212|123456|刘行|student|no_class|2学分
+1238923|123456|sdans|student|no_class|2学分
+123|123456|sddns|student|no_class|2学分
