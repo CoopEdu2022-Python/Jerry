@@ -37,10 +37,9 @@ def check_account(account, password):
     return False
 
 
-def userboard():
+def userboard(click):
     datare = databeenread.split("|")
     print(datare)
-    click = input("可输入'用户身份','课程信息','学分要求;")
     boardlist = {"用户身份": datare[3], "课程信息": datare[4], "学分要求": datare[5]}
     print(boardlist[click])
 
@@ -50,11 +49,14 @@ add_student(1238923, "sdans")
 add_student(123, "sddns")
 lenoflist = readlen()
 print(lenoflist)
-
 while 1:
-    if check_account(str(input("请输入账号'测试账号为:123'")), str(input("请输入密码'测试账号为:123456'"))):
-        break
-print("欢迎进入选课系统")
-print(databeenread)
-while 1:
-    userboard()
+    while 1:
+        if check_account(str(input("请输入账号'测试账号为:123'")), str(input("请输入密码'测试账号为:123456'"))):
+            break
+    print("欢迎进入选课系统")
+    print(databeenread)
+    while 1:
+        click = input("可输入'用户身份','课程信息','学分要求','登出'")
+        if click == "登出":
+            break
+        userboard(click)
