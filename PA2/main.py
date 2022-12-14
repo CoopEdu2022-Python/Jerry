@@ -1,4 +1,4 @@
-
+import os
 databeenread = ''
 
 
@@ -7,8 +7,12 @@ def login_main(account, password):
 
 
 def add_student(account, name):
-    file = open("id_data.txt", mode="a")
-    file.writelines([str(account), "|", "123456", "|", str(name), "|", "student", "|","no class", "|", "2学分", "\n"])
+    print(os.listdir('students'))
+    student_way = "C:\Users\徐洪森\PycharmProjects\pythonProject\ all project\PA2\students"
+    imformation = [str(account), "|", "123456", "|", str(name), "|", "student", "|","no class", "|", "2学分"]
+    full_name = student_way + account + ".txt"
+    file = open(full_name, mode="w")
+    file.write(str(imformation))
     file.close()
 
     return
@@ -49,14 +53,14 @@ add_student(1238923, "sdans")
 add_student(123, "sddns")
 lenoflist = readlen()
 print(lenoflist)
-while 1:
-    while 1:
-        if check_account(str(input("请输入账号'测试账号为:123'")), str(input("请输入密码'测试账号为:123456'"))):
-            break
-    print("欢迎进入选课系统")
-    print(databeenread)
-    while 1:
-        click = input("可输入'用户身份','课程信息','学分要求','登出'")
-        if click == "登出":
-            break
-        userboard(click)
+# while 1:
+#     while 1:
+#         if check_account(str(input("请输入账号'测试账号为:123'")), str(input("请输入密码'测试账号为:123456'"))):
+#             break
+#     print("欢迎进入选课系统")
+#     print(databeenread)
+#     while 1:
+#         click = input("可输入'用户身份','课程信息','学分要求','登出'")
+#         if click == "登出":
+#             break
+#         userboard(click)
