@@ -1,6 +1,6 @@
 import os
 databeenread = ''
-student_way = None
+student_way = "C://Users/徐洪森/PycharmProjects/pythonProject/all project/PA2/students/"
 
 def login_main(account, password):
     pass
@@ -31,9 +31,11 @@ def check_account(account, password):
             filer = open(student_way + os.listdir("students")[_],mode="r")
             linesread = filer.readlines()
             print(linesread)
-        else:
-            print("None")
-            print(os.listdir("students")[_])
+            if linesread[0].split(",")[2].split("'")[1] == password:
+                return linesread[0].split(",")[6].split("'")[1]
+
+
+    print("未查询到该账号")
     # first = open("id_data.txt", mode="r")  # 返回一个文件对象
     # line = first.readline()  # 调用文件的 readline()方法
     # while line:
@@ -61,7 +63,7 @@ add_student(121212, "刘行")
 add_student(1238923, "sdans")
 add_student(123, "sddns")
 lenoflist = readlen()
-check_account("123","21323")
+print(check_account("123","123456"))
 # while 1:
 #     while 1:
 #         if check_account(str(input("请输入账号'测试账号为:123'")), str(input("请输入密码'测试账号为:123456'"))):
