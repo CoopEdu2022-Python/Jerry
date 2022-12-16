@@ -1,6 +1,9 @@
 import os
+from student import Student
+from teacher import Teacher
+save_data = ''
 databeenread = ''
-student_way = "C://Users/徐洪森/PycharmProjects/pythonProject/all project/PA2/students/"
+student_way = "students/"
 
 def login_main(account, password):
     pass
@@ -10,8 +13,8 @@ def add_student(account, name):
     account = str(account)
     print(os.listdir('students'))
     global student_way
-    student_way = "C://Users/徐洪森/PycharmProjects/pythonProject/all project/PA2/students/"
-    imformation = [str(account), "|", "123456", "|", str(name), "|", "student", "|","no class", "|", "2学分"]
+    student_way = "students/"
+    imformation = str(account), "123456", str(name), "student",["no class"]
     full_name = student_way + account + ".txt"
     file = open(full_name, mode="w")
     file.write(str(imformation))
@@ -31,8 +34,15 @@ def check_account(account, password):
             filer = open(student_way + os.listdir("students")[_],mode="r")
             linesread = filer.readlines()
             print(linesread)
-            if linesread[0].split(",")[2].split("'")[1] == password:
-                return linesread[0].split(",")[6].split("'")[1]
+            while 1:
+                if linesread[0].split(",")[1].split("'")[1] == password:
+                    global save_data
+                    save_data = linesread[0]
+                    return linesread[0].split(",")[3].split("'")[1]
+
+                else:
+                    print("密码错误")
+                    password = input("请重新输入密码")
 
 
     print("未查询到该账号")
@@ -53,25 +63,35 @@ def check_account(account, password):
 
 
 def userboard(click):
-    datare = databeenread.split("|")
-    print(datare)
-    boardlist = {"用户身份": datare[3], "课程信息": datare[4], "学分要求": datare[5]}
-    print(boardlist[click])
 
+    boardlist = {"用户身份": user.get_self(), "课程信息": user.course}
+    return boardlist[click]
 
+def lon_in():
+    while 1:
+        s_c = str(input("请输入账号'测试账号为:123'"))
+        s_p = str(input("请输入密码'测试账号为:123456'"))
+        if check_account(s_c, s_p) == "student":
+            print("student", save_data)
+            student_user = Student(save_data.split(",")[0], save_data.split(",")[1], save_data.split(",")[2],
+                        save_data.split(",")[3], save_data.split(",")[4])
+            return student_user
+        elif check_account(s_c, s_p) == "teacher":
+            print("teacher", save_data)
+            teacher_user = Teacher(save_data.split(",")[0], save_data.split(",")[1], save_data.split(",")[2],
+                        save_data.split(",")[3], save_data.split(",")[4])
+            return teacher_user
 add_student(121212, "刘行")
 add_student(1238923, "sdans")
 add_student(123, "sddns")
 lenoflist = readlen()
 print(check_account("123","123456"))
-# while 1:
-#     while 1:
-#         if check_account(str(input("请输入账号'测试账号为:123'")), str(input("请输入密码'测试账号为:123456'"))):
-#             break
-#     print("欢迎进入选课系统")
-#     print(databeenread)
-#     while 1:
-#         click = input("可输入'用户身份','课程信息','学分要求','登出'")
-#         if click == "登出":
-#             break
-#         userboard(click)
+
+
+while 1:
+    user = lon_in()
+    print("欢迎进入选课系统")
+    print(databeenread)
+    user.user_board()
+
+
