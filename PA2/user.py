@@ -1,5 +1,5 @@
 class User():
-    def __init__(self, account_number: str, password: str, name: str, id_ , corse: list):
+    def __init__(self, account_number: str, password: str, name: str):
         self.name = name
         self.account = account_number
         self.__password = password

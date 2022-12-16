@@ -14,7 +14,7 @@ def add_student(account, name):
     print(os.listdir('students'))
     global student_way
     student_way = "students/"
-    imformation = str(account), "123456", str(name), "student",["no class"]
+    imformation = str(account), "123456", str(name), "student",["no class"],""
     full_name = student_way + account + ".txt"
     file = open(full_name, mode="w")
     file.write(str(imformation))
@@ -78,8 +78,7 @@ def lon_in():
             return student_user
         elif check_account(s_c, s_p) == "teacher":
             print("teacher", save_data)
-            teacher_user = Teacher(save_data.split(",")[0], save_data.split(",")[1], save_data.split(",")[2],
-                        save_data.split(",")[3], save_data.split(",")[4])
+            teacher_user = Teacher(save_data.split(",")[0], save_data.split(",")[1], save_data.split(",")[2])
             return teacher_user
 add_student(121212, "刘行")
 add_student(1238923, "sdans")
@@ -92,6 +91,7 @@ while 1:
     user = lon_in()
     print("欢迎进入选课系统")
     print(databeenread)
-    user.user_board()
+    while 1:
+        user.user_board()
 
 

@@ -6,7 +6,7 @@ class Student(User):
 
     def __init__(self, account_number: str, password: str, name: str, id_, course:list):
 
-        super().__init__(account_number, password, name, id_, course)
+        super().__init__(account_number, password, name)
 
         self.course = course
         self.__password = password
