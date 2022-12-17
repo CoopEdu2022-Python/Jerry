@@ -22,7 +22,7 @@ class Student(User):
                 break
             else:
                 boardlist = {"用户身份": self.get_self(), "课程信息": self.course}
-                print(boardlist[click])
+                return boardlist[click]
 
     def identity(self):
         return self.id_
@@ -45,5 +45,3 @@ class Student(User):
         return self.name, course_name
 
 
-a = Student("1","2","3","4",[])
-a.test()

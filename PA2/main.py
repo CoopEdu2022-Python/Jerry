@@ -33,7 +33,6 @@ def check_account(account, password):
         if str(account)+".txt"  == os.listdir("students")[_]:
             filer = open(student_way + os.listdir("students")[_],mode="r")
             linesread = filer.readlines()
-            print(linesread)
             while 1:
                 if linesread[0].split(",")[1].split("'")[1] == password:
                     global save_data
@@ -45,7 +44,7 @@ def check_account(account, password):
                     password = input("请重新输入密码")
 
 
-    print("未查询到该账号")
+    return ("未查询到该账号")
     # first = open("id_data.txt", mode="r")  # 返回一个文件对象
     # line = first.readline()  # 调用文件的 readline()方法
     # while line:
@@ -69,29 +68,26 @@ def userboard(click):
 
 def lon_in():
     while 1:
-        s_c = str(input("请输入账号'测试账号为:123'"))
-        s_p = str(input("请输入密码'测试账号为:123456'"))
+        s_c = str(input("请输入账号'学生测试账号为:123，教师测试账号为:1234"))
+        s_p = str(input("请输入密码'学生与教师测试账号密码为都:123456'"))
         if check_account(s_c, s_p) == "student":
-            print("student", save_data)
+
             student_user = Student(save_data.split(",")[0], save_data.split(",")[1], save_data.split(",")[2],
                         save_data.split(",")[3], save_data.split(",")[4])
             return student_user
         elif check_account(s_c, s_p) == "teacher":
-            print("teacher", save_data)
+
             teacher_user = Teacher(save_data.split(",")[0], save_data.split(",")[1], save_data.split(",")[2])
             return teacher_user
-add_student(121212, "刘行")
-add_student(1238923, "sdans")
-add_student(123, "sddns")
-lenoflist = readlen()
-print(check_account("123","123456"))
+        print(check_account(s_c, s_p))
+
 
 
 while 1:
     user = lon_in()
     print("欢迎进入选课系统")
-    print(databeenread)
     while 1:
-        user.user_board()
+        if user.user_board() == "break":
+            break
 
 
