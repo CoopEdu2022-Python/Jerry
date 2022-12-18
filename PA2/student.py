@@ -21,15 +21,39 @@ class Student(User):
             if str(x)+".txt"  == os.listdir("course_data")[_]:
                 filer = open("course_data/"+os.listdir("course_data")[_],mode="r")
                 linesread = filer.readlines()
-                filer.close()
-                print(linesread[0].split(",")[0],linesread[0].split(",")[2])
-                return (linesread[0])
+
+                print(linesread[0].split(",")[0],linesread[0].split(",")[1])
+
+                if str(input(input("请确认输入'是'"))) == "是":
+                    for _ in range(len(os.listdir("course_data"))):
+                        if str(x) + ".txt" == os.listdir("course_data")[_]:
+                            c = self.check_classmate(x)
+                            w = open("course_data/" + os.listdir("course_data")[_], mode="w")
+                            w.write(linesread[0].split(",")[0] +","+ linesread[0].split(",")[1]+ "," +"'|'"+c + self.name)
+                            print("已加入")
+                            print(linesread[0].split(",")[0] + linesread[0].split(",")[1] +"'|'"+c + self.name)
+                            filer.close()
+                            w.close()
+                            return linesread[0].split(",")[0] +","+ linesread[0].split(",")[1]+ "," +"'|'"+c + self.name
+
+
+
+                else:
+                    print("退回中")
+                    break
 
             else:
                 continue
         print("未查询该课程")
     def get_self(self):
         return self.name
+    def check_classmate(self,name):
+        for _ in range(len(os.listdir("course_data"))):
+            if str(name)+".txt"  == os.listdir("course_data")[_]:
+                filer = open("course_data/"+os.listdir("course_data")[_],mode="r")
+                linesread = filer.readlines()
+                return (linesread[0].split("|")[1])
+
     def user_board(self):
         while 1:
             click = input("可输入'用户身份','课程信息','学分要求','登出','加入课程'")

@@ -25,8 +25,8 @@ class Teacher(User):
         if judge_course_existence(x) is not False:
             return "该课程已存在"
         c = input("选修or必修")
-        imformation = [str(x), [], c]
-        full_name = "course_data/" + x + ".txt"
+        imformation = [str(x),c,"|" ]
+        full_name = "course_data/" +x+ ".txt"
         file = open(full_name, mode="w")
         file.write(str(imformation))
         file.close()
