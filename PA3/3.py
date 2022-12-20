@@ -30,7 +30,7 @@ def play_ball():
     # 获取小球图片的区域开状
     ball_rect = ball_image.get_rect()
 
-    frames_per_sec = 10
+    frames_per_sec = 60
     fps_clock = pygame.time.Clock()
 
     while True:
