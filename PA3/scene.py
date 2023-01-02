@@ -28,3 +28,14 @@ class Ground(pygame.sprite.Sprite):
     def draw(self, screen):
         screen.blit(self.image_0, self.rect_0)
         screen.blit(self.image_1, self.rect_1)
+class Cloud():
+    speed = 1
+    image = None
+    x = None
+    y = None
+    def __init__(self,x,y,image):
+        self.x = x
+        self.y = y
+        self.image = image
+    def move(self):
+        self.x -= self.speed
