@@ -5,16 +5,15 @@
 import time
 import random
 import pygame
-
-from objects import Ground, Dino, Cactus, Cloud, Ptera, Star
+from dino import Dino
+from objects import Ground, Cactus, Cloud, Ptera, Star
 
 pygame.init()
 SCREEN = WIDTH, HEIGHT = (600, 200)
-win = pygame.display.set_mode(SCREEN, pygame.NOFRAME)
+win = pygame.display.set_mode(SCREEN)
+pygame.display.set_caption("小恐龙")
 pygame.init()  #初始化背景设置
-screen = pygame.display.set_mode((600, 200))  #创建一个名为screen的窗口
-pygame.display.set_caption("Alien Invasion")  #设置当前窗口标题
-bg_color = (230,230,230)   #设置背景颜色
+
 
 
 clock = pygame.time.Clock()
@@ -100,7 +99,7 @@ cloud_time = 100
 stars_time = 190
 
 SPEED = 5
-jump = False
+jump = True
 duck = False
 
 score = 0
@@ -119,13 +118,13 @@ while running:
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
-			running = False
+			running = False #中断循环，退出
 
 		if event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
-				running = False
+				running = False#中断循环，退出
 
-			if event.key == pygame.K_SPACE:
+			if event.key == pygame.K_SPACE:#检测
 				if start_page:
 					start_page = False
 				elif dino.alive:
@@ -249,6 +248,7 @@ while running:
 		cactus_group.draw(win)
 		ptera_group.update(SPEED-1, dino)
 		ptera_group.draw(win)
+
 		dino.update(jump, duck)
 		dino.draw(win)
 
