@@ -2,7 +2,7 @@
 
 # Author : Prajjwal Pathak (pyguru)
 # Date : Sunday, 17 October, 2021
-
+import time
 import random
 import pygame
 
@@ -11,6 +11,11 @@ from objects import Ground, Dino, Cactus, Cloud, Ptera, Star
 pygame.init()
 SCREEN = WIDTH, HEIGHT = (600, 200)
 win = pygame.display.set_mode(SCREEN, pygame.NOFRAME)
+pygame.init()  #初始化背景设置
+screen = pygame.display.set_mode((600, 200))  #创建一个名为screen的窗口
+pygame.display.set_caption("Alien Invasion")  #设置当前窗口标题
+bg_color = (230,230,230)   #设置背景颜色
+
 
 clock = pygame.time.Clock()
 FPS = 60
@@ -84,15 +89,15 @@ def reset():
 
 keys = []
 GODMODE = False
-DAYMODE = False
+DAYMODE = True
 LYAGAMI = False
 
 # VARIABLES ******************************************************************
 
 counter = 0
 enemy_time = 100
-cloud_time = 500
-stars_time = 175
+cloud_time = 100
+stars_time = 190
 
 SPEED = 5
 jump = False
@@ -149,7 +154,7 @@ while running:
 				LYAGAMI = not LYAGAMI
 
 			if ''.join(keys).upper() == 'SPEEDUP':
-				SPEED += 2
+				SPEED += 100
 
 			if ''.join(keys).upper() == 'IAMRICH':
 				score += 10000
@@ -229,7 +234,7 @@ while running:
 						else:
 							duck = False
 
-					if pygame.sprite.collide_mask(dino, ptera):
+					if pygame.sprite.collide_mask(dino, ptera):#做个标记
 						SPEED = 0
 						dino.alive = False
 						die_fx.play()
@@ -263,9 +268,15 @@ while running:
 
 			if replay_rect.collidepoint(mouse_pos):
 				reset()
-
+		if score > 100:
+			if score % 100 * random.randint(1,3) == 1:
+				if DAYMODE == True:
+					DAYMODE = False
+				elif DAYMODE == False:
+					DAYMODE = True
 	pygame.draw.rect(win, WHITE, (0, 0, WIDTH, HEIGHT), 4)
 	clock.tick(FPS)
 	pygame.display.update()
+	pygame.display.flip()
 
 pygame.quit()

@@ -116,7 +116,7 @@ class Cactus(pygame.sprite.Sprite):
 		super(Cactus, self).__init__()
 
 		self.image_list = []
-		for i in range(5):
+		for i in range(4):
 			scale = 0.65
 			img = pygame.image.load(f'resources/images/cactus/{i+1}.png')
 			w, h = img.get_size()
