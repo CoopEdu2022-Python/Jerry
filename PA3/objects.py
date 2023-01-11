@@ -2,7 +2,7 @@ import pygame
 
 SCREEN = WIDTH, HEIGHT = (600, 200)
 
-class Ground():
+class Ground:
 	def __init__(self):
 		self.image = pygame.image.load('resources/images/ground/ground.png')
 		self.rect = self.image.get_rect()
@@ -27,7 +27,7 @@ class Ground():
 		win.blit(self.image, (self.x2, self.y))
 
 
-class Dino():
+class Dino:
 	def __init__(self, x, y):
 		self.x, self.base = x, y
 
@@ -199,7 +199,7 @@ class Star(pygame.sprite.Sprite):
 		image = pygame.image.load(f'resources/images/star/stars.png')
 		self.image_list = []
 		for i in range(3):
-			img = image.subsurface((0, 20*(i), 18, 18))
+			img = image.subsurface((0, 19*(i), 18, 18))
 			self.image_list.append(img)
 		self.image = self.image_list[type-1]
 		self.rect = self.image.get_rect()
