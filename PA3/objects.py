@@ -12,15 +12,16 @@ class Ground:
 		self.x2 = self.width
 		self.y = 150
 
-	def update(self, speed):
-		self.x1 -= speed
-		self.x2 -= speed
+	def update(self, speed,dino):
 
-		if self.x1 <= -self.width:
-			self.x1 = self.width
+		if dino.alive:
+			self.x1 -= speed
+			self.x2 -= speed
+			if self.x1 <= -self.width:
+				self.x1 = self.width
 
-		if self.x2 <= -self.width:
-			self.x2 = self.width
+			if self.x2 <= -self.width:
+				self.x2 = self.width
 
 	def draw(self, win):
 		win.blit(self.image, (self.x1, self.y))

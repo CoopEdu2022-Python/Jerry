@@ -238,7 +238,7 @@ while running:
 						dino.alive = False
 						die_fx.play()
 
-		ground.update(SPEED)
+		ground.update(SPEED+0.8,dino)
 		ground.draw(win)
 		cloud_group.update(SPEED-3, dino)
 		cloud_group.draw(win)
