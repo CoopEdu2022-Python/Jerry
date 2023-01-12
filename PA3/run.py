@@ -7,7 +7,7 @@ import random
 import pygame
 from dino import Dino
 from objects import Ground, Cactus, Cloud, Ptera, Star
-
+from ctrl import *
 pygame.init()
 SCREEN = WIDTH, HEIGHT = (600, 200)
 win = pygame.display.set_mode(SCREEN)
@@ -77,38 +77,7 @@ def reset():
 
 	dino.reset()
 
-# CHEATCODES *****************************************************************
 
-# GODMODE -> immortal jutsu ( can't die )
-# DAYMODE -> Swap between day and night
-# LYAGAMI -> automatic jump and duck
-# IAMRICH -> add 10,000 to score
-# HISCORE -> highscore is 99999
-# SPEEDUP -> increase speed by 2
-
-keys = []
-GODMODE = False
-DAYMODE = True
-LYAGAMI = False
-
-# VARIABLES ******************************************************************
-
-counter = 0
-enemy_time = 100
-cloud_time = 100
-stars_time = 190
-
-SPEED = 5
-jump = True
-duck = False
-
-score = 0
-high_score = 0
-
-start_page = True
-mouse_pos = (-1, -1)
-
-running = True
 while running:
 	jump = False
 	if DAYMODE:
@@ -269,6 +238,7 @@ while running:
 			if replay_rect.collidepoint(mouse_pos):
 				reset()
 		if score > 100:
+			a = score
 			if score % 100 * random.randint(1,3) == 1:
 				if DAYMODE == True:
 					DAYMODE = False
